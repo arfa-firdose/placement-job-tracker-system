@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="center">
+    <form class="card" method="POST">
+        <h2>Register</h2>
+        <form action="/register" method="POST">
+            <input name="name" placeholder="Name" required>
+            <input name="email" type="email" placeholder="Email" required>
+            <input name="password" type="password" placeholder="Password" required>
+            <button>Create Account</button>
+        <p>Already have an account? <a href="/login">Login</a></p>
+        </form>
+    </form>
+</body>
+</html>

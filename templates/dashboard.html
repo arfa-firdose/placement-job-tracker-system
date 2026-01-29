@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Application Tracker</h1>
+    <div class="actions">
+        <a class="btn" href="/add">+ Add Application</a>
+        <a class="btn export" href="/export">⬇ Export Excel</a>
+    </div>
+    <div class="charts">
+        <canvas id="monthlyChart"></canvas>
+        <canvas id="statusChart"></canvas>
+    </div>
+    <table>
+        <tr>
+            <th>Company</th><th>Role</th><th>Status</th><th>Follow-up</th><th>Notes</th>
+        </tr>
+        {% for a in apps %}
+        <tr>
+            <td>{{a.company}}</td>
+            <td>{{a.role}}</td>
+            <td><span class="badge {{a.status}}">{{a.status}}</span></td>
+            <td>{{a.follow_up_date}}</td>
+            <td>{{a.notes}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

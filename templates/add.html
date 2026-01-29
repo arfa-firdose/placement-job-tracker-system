@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="center">
+<form class="card wide" method="POST">
+    <h2>Add Application</h2>
+
+    <input name="company" placeholder="Company">
+    <input name="role" placeholder="Role">
+    <input name="platform" placeholder="Platform">
+    <input name="applied_date" type="date">
+    <select name="status">
+        <option>Applied</option>
+        <option>Assessment</option>
+        <option>Interview</option>
+        <option>Rejected</option>
+        <option>Selected</option>
+    </select>
+    <input type="date" name="follow_up">
+    <textarea name="notes" placeholder="Notes"></textarea>
+
+    <button>Save</button>
+</form>
+</body>
+</html>

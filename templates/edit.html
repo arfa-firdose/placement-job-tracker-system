@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Application</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="center">
+
+<form class="card wide" method="POST">
+    <h2>Edit Application</h2>
+
+    <input name="company" value="{{ app.company }}" placeholder="Company" required>
+
+    <input name="role" value="{{ app.role }}" placeholder="Role" required>
+
+    <input name="platform" value="{{ app.platform }}" placeholder="Platform" required>
+
+    <input type="date" name="applied_date" value="{{ app.applied_date }}" required>
+
+    <select name="status">
+        <option {% if app.status == 'Applied' %}selected{% endif %}>Applied</option>
+        <option {% if app.status == 'Assessment' %}selected{% endif %}>Assessment</option>
+        <option {% if app.status == 'Interview' %}selected{% endif %}>Interview</option>
+        <option {% if app.status == 'Rejected' %}selected{% endif %}>Rejected</option>
+        <option {% if app.status == 'Selected' %}selected{% endif %}>Selected</option>
+    </select>
+
+    <input type="date" name="follow_up" value="{{ app.follow_up_date }}">
+
+    <textarea name="notes" placeholder="Notes">{{ app.notes }}</textarea>
+
+    <button>Update Application</button>
+</form>
+
+</body>
+</html>
