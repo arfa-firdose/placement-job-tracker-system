@@ -1,4 +1,3 @@
-# placement-job-tracker-system
 # Placement & Job Application Tracker System 🚀
 
 A full-stack web application built using **Python Flask** and **MySQL** to help students and job seekers track their internship and job applications efficiently.  
