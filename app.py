@@ -114,7 +114,21 @@ def export():
     df.to_excel(path, index=False)
     return send_file(path, as_attachment=True)
 
+@app.route('/api/register', methods=['POST'])
+def api_register():
+    data = request.json
 
+    name = data.get('name')
+    email = data.get('email')
+    password = generate_password_hash(data.get('password'))
+
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("INSERT INTO users(name,email,password_hash) VALUES(%s,%s,%s)",
+                (name,email,password))
+    conn.commit()
+
+    return {"message": "User registered successfully"}, 201
 
 @app.route('/api/applications', methods=['GET'])
 @app.route('/api/apps', methods=['GET'])
